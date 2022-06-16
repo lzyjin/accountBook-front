@@ -1,0 +1,92 @@
+html {
+
+}
+body {
+    --pink: #ff87ca;
+    --lightPink: #ffe1f2;
+    --lightGray: #f1f1f1;
+    font-size: 16px;
+    color: #000;
+}
+#intro { background: var(--pink); }
+#intro .title { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); text-align: center; }
+#intro .title--icon { color: #fff; font-size: 4rem; margin-bottom: 1rem; }
+#intro .title--text { color: #fff; }
+
+#login {  }
+#login main {  }
+#login main .top {  }
+#login main .top__title { font-size: 2rem; }
+
+#book {  }
+.header { width: 100%;  }
+.header>div { border-bottom: 1px solid var(--lightGray); }
+.header .header__title { font-weight: bold; height: 50px; display: flex; align-items: center;
+    padding: 0 5%; }
+.header .title { font-size: 2rem; }
+.header .button--prev-page { color: var(--pink); }
+.header .header__title .button { margin-left: auto; display: flex; align-items: center; gap: 0.5rem; }
+.header .header__title .button__item { flex: 1; } .header__title .button__item i { font-size: 1.3rem; }
+.header .header__select-month {  }
+.header .header__select-month .inner { display: flex; align-items: center; justify-content: center; gap: 1rem; padding: 0.5rem; }
+.header .header__select-month .month { font-size: 1.2rem; }
+.header .header__select-month .button {  }
+.header .header__select-month .button i { font-size: 2rem; }
+.header .header__money { display: flex; justify-content: space-around; }
+.header .money__item { display: flex; justify-content: space-between; gap: 2rem; padding: 1rem; }
+.header .money__category {  }
+.header .money__amount { font-weight: bold; }
+.header .money__item--expense .money__amount { color: var(--pink); }
+.header .header__tab { display: flex; }
+.header .tab--item { flex: 1; text-align: center; padding: 1rem; }
+.header .tab--item.active { color: var(--pink); font-weight: bold; border-bottom: 5px solid var(--pink); }
+
+.footer { border-top: 1px solid var(--lightGray); width: 100%; position: fixed; left: 0; bottom: 0; display: flex; }
+.footer .footer__item { flex: 1; text-align: center; padding: 1rem; }
+.footer .footer__item i { font-size: 1.5rem; margin-bottom: 0.3rem;}
+
+.button--add-list { position: fixed; right: 8%; bottom: 12%; border-radius: 50%; padding: 1rem; background: var(--pink); }
+.button--add-list i { color: #fff; font-size: 3rem; }
+
+.content { position: relative; margin-top: 50px; }
+.content__top {  }
+.content__top .top__title { font-size: 2rem; margin-bottom: 2rem; margin-left: 5%; font-weight: bold; }
+.content__form { width: 90%; margin: 0 auto; }
+.content__form .input { position: relative; }
+.content__form .input i { position: absolute; top: 50%; transform: translateY(-50%); }
+.content__form .input--date i { right: 5%; }
+.content__form .input--money i { left: 5%; }
+.content__form label { display: block; width: 100%; margin-bottom: 0.5rem; }
+.content__form input { display: block; width: 100%; border: none; background: var(--lightGray); padding: 1rem; border-radius: 10px; margin-bottom: 1rem; }
+.content__form .input--money input { text-align: right; }
+.content__form .memo { background: var(--lightGray); padding: 1rem; border-radius: 10px; height: 50vh; }
+.content__form .button--login { margin-top: 1rem; background: var(--pink); width: 100%; padding: 1rem; color: #fff; border-radius: 10px; font-weight: bold; font-size: 1.5rem; }
+.content__form .button--save { text-align: center; margin-top: 1rem; background: var(--pink); width: 100%; padding: 1rem; color: #fff; border-radius: 10px; font-weight: bold; font-size: 1.5rem; }
+
+
+.content__category {  }
+.content__category--expense { width: 90%; margin: 0 auto; display: grid; grid-template-columns: repeat(4, minmax(60px, auto)); grid-auto-rows: minmax(80px, auto); column-gap: 5%; row-gap: 10%; }
+.category__item { text-align: center; }
+.category__item .item__icon { margin: 0 auto; width: 60px; height: 60px; background: var(--lightGray); display: flex; justify-content: center; align-items: center; font-size: 1.5rem; border-radius: 50%; }
+.category__item .item__name {  }
+
+.content__list { width: 90%; margin: 0 auto; }
+.content__item { font-weight: bold; display: block; width: 100%; border: none; background: var(--lightGray); padding: 1rem; border-radius: 10px; margin-bottom: 1rem; text-align: center; }
+
+#addList {}
+
+.modal { z-index: 1; width: 100%; position: fixed; left: 0; bottom: 0; background: #fff; border-radius: 30px 30px 0 0; padding: 5%; }
+.modal__top { display: flex; padding-bottom: 10px; border-bottom: 1px solid var(--lightGray); }
+.modal__top .modal__date { font-weight: bold; }
+.modal__top .modal__button--close { margin-left: auto; }
+.modal__content {}
+.modal__content .modal__total { display: flex; padding-top: 5px; padding-bottom: 5px; border-bottom: 1px solid var(--lightGray); }
+.modal__content .modal__total .text { margin-right: auto; }
+.modal__content .modal__total .income { color: var(--pink);  }
+.modal__content .modal__total .expense { margin-left: 1rem; }
+.modal__list {  }
+.modal__item { display: flex; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--lightGray);  }
+.modal__item .icon { width: 30px; height: 30px; background: var(--lightGray); display: flex; justify-content: center; align-items: center; border-radius: 50%; }
+.modal__item .icon i { font-size: 0.7rem; }
+.modal__item .info {  }
+.modal__item .price { margin-left: auto; }

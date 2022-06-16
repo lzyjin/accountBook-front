@@ -6,6 +6,7 @@ import store from './store'
 //css
 import '@/assets/css/reset.css'
 import '@/assets/css/main.scss'
+import '@/assets/css/style.css'
 
 //import prototype
 import ModalState from "@/common/service/common/ModalState";
