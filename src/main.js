@@ -3,6 +3,8 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
+
+
 //css
 import '@/assets/css/reset.css'
 import '@/assets/css/main.scss'
