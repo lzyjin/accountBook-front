@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>가계부-일간</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" maximun-scale="1.0", minimun-scale="1.0", user-scalable="no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body id="book">
+    <header class="header">
+        <div class="header__title">
+            <h1 class="title">가계부</h1>
+            <div class="button">
+                <div class="button__item button__item--search">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="button__item button__item--filter">
+                    <i class="fas fa-filter"></i>
+                </div>
+            </div>
+        </div>
+        <div class="header__select-month">
+            <div class="inner">
+                <div class="button button--prev">
+                    <i class="fas fa-caret-left"></i>
+                </div>
+                <div class="month">2002년 5월</div>
+                <div class="button button--next">
+                    <i class="fas fa-caret-right"></i>
+                </div>
+            </div>
+        </div>
+        <div class="header__money">
+            <div class="money__item money__item--income">
+                <div class="money__category">지출</div>
+                <div class="money__amount">534,000원</div>
+            </div>
+            <div class="money__item money__item--expense">
+                <div class="money__category">수입</div>
+                <div class="money__amount">2,534,000원</div>
+            </div>
+        </div>
+        <div class="header__tab">
+            <div class="tab--item monthly">월간</div>
+            <div class="tab--item weekly">주간</div>
+            <div class="tab--item daily active">일간</div>
+        </div>
+    </header>
+
+    <main class="content">
+        <div class="book-daily-list">
+            <div class="book-daily-list-component today">
+                <div class="book-daily-date">
+                    <div class="date">19일
+                        <i class="today-tag">오늘</i>
+                    </div>
+                    <div class="total-money">
+                        <p class="money money-income">+152,305,700원</p>
+                        <p class="money money-expense">-712,995원</p>
+                    </div>
+                </div>
+                <div class="book-daily-items">
+                    <div class="book-daily-item book-daily-item-expense">
+                        <div class="item-content item-content-icon">
+                            <i class="fas fa-bus"></i>
+                        </div>
+                        <div class="item-content item-content-memo">
+                            <p class="memo">4월 교통대금</p>
+                            <p class="category-wrap">
+                                <span class="category category-main">교통비</span>
+                                <span class="category category-sub">대중교통</span>
+                            </p>
+                        </div>
+                        <div class="item-content item-content-money">
+                            <p class="money money-expense">-7,995원</p>
+                        </div>
+                    </div>
+                    <div class="book-daily-item book-daily-item-expense">
+                        <div class="item-content item-content-icon">
+                            <i class="fas fa-bus"></i>
+                        </div>
+                        <div class="item-content item-content-memo">
+                            <p class="memo">4월 교통대금</p>
+                            <p class="category-wrap">
+                                <span class="category category-main">교통비</span>
+                                <span class="category category-sub">대중교통</span>
+                            </p>
+                        </div>
+                        <div class="item-content item-content-money">
+                            <p class="money money-expense">-7,995원</p>
+                        </div>
+                    </div>
+                    <div class="book-daily-item book-daily-item-income">
+                        <div class="item-content item-content-icon">
+                            <i class="fas fa-bus"></i>
+                        </div>
+                        <div class="item-content item-content-memo">
+                            <p class="memo">4월 급여</p>
+                            <p class="category-wrap">
+                                <span class="category category-main">주수입</span>
+<!--                                <span class="category category-sub"></span>-->
+                            </p>
+                        </div>
+                        <div class="item-content item-content-money">
+                            <p class="money money-income">+34,507,995원</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="book-daily-list-component">
+                <div class="book-daily-date">
+                    <div class="date">16일
+<!--                        <i class="today-tag">오늘</i>-->
+                    </div>
+                    <div class="total-money">
+                        <p class="money money-income">+152,305,700원</p>
+                        <p class="money money-expense">-712,995원</p>
+                    </div>
+                </div>
+                <div class="book-daily-items">
+                    <div class="book-daily-item book-daily-item-expense">
+                        <div class="item-content item-content-icon">
+                            <i class="fas fa-bus"></i>
+                        </div>
+                        <div class="item-content item-content-memo">
+                            <p class="memo">4월 교통대금</p>
+                            <p class="category-wrap">
+                                <span class="category category-main">교통비</span>
+                                <span class="category category-sub">대중교통</span>
+                            </p>
+                        </div>
+                        <div class="item-content item-content-money">
+                            <p class="money money-expense">-7,995원</p>
+                        </div>
+                    </div>
+                    <div class="book-daily-item book-daily-item-expense">
+                        <div class="item-content item-content-icon">
+                            <i class="fas fa-bus"></i>
+                        </div>
+                        <div class="item-content item-content-memo">
+                            <p class="memo">4월 교통대금</p>
+                            <p class="category-wrap">
+                                <span class="category category-main">교통비</span>
+                                <span class="category category-sub">대중교통</span>
+                            </p>
+                        </div>
+                        <div class="item-content item-content-money">
+                            <p class="money money-expense">-7,995원</p>
+                        </div>
+                    </div>
+                    <div class="book-daily-item book-daily-item-expense">
+                        <div class="item-content item-content-icon">
+                            <i class="fas fa-bus"></i>
+                        </div>
+                        <div class="item-content item-content-memo">
+                            <p class="memo">4월 교통대금</p>
+                            <p class="category-wrap">
+                                <span class="category category-main">교통비</span>
+                                <span class="category category-sub">대중교통</span>
+                            </p>
+                        </div>
+                        <div class="item-content item-content-money">
+                            <p class="money money-expense">-7,995원</p>
+                        </div>
+                    </div>
+                    <div class="book-daily-item book-daily-item-income">
+                        <div class="item-content item-content-icon">
+                            <i class="fas fa-bus"></i>
+                        </div>
+                        <div class="item-content item-content-memo">
+                            <p class="memo">4월 급여</p>
+                            <p class="category-wrap">
+                                <span class="category category-main">주수입</span>
+<!--                                <span class="category category-sub"></span>-->
+                            </p>
+                        </div>
+                        <div class="item-content item-content-money">
+                            <p class="money money-income">+34,507,995원</p>
+                        </div>
+                    </div>
+                    <div class="book-daily-item book-daily-item-income">
+                        <div class="item-content item-content-icon">
+                            <i class="fas fa-bus"></i>
+                        </div>
+                        <div class="item-content item-content-memo">
+                            <p class="memo">4월 급여</p>
+                            <p class="category-wrap">
+                                <span class="category category-main">주수입</span>
+<!--                                <span class="category category-sub"></span>-->
+                            </p>
+                        </div>
+                        <div class="item-content item-content-money">
+                            <p class="money money-income">+34,507,995원</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="button--add-list">
+            <i class="fas fa-plus"></i>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__item footer__item--book">
+            <i class="fas fa-wallet"></i>
+            <p class="">가계부</p>
+        </div>
+        <div class="footer__item footer__item--chart">
+            <i class="fas fa-chart-pie"></i>
+            <p class="">통계</p>
+        </div>
+        <div class="footer__item footer__item--budget">
+            <i class="fas fa-money-bill"></i>
+            <p class="">예산</p>
+        </div>
+        <div class="footer__item footer__item--setting">
+            <i class="fas fa-bars"></i>
+            <p class="">전체</p>
+        </div>
+    </footer>
+</body>
+</html>
