@@ -18,14 +18,23 @@ const headerControl = new HeaderControl(store)
 Vue.use(VueRouter)
 
 //page
-import Main from '@/views/main/index'
+import Main from '@/views/user/login/index';
+import Join from '@/views/user/join/index'; //회원가입1
+import Join2 from '@/views/user/join2/index'; //회원가입2
 import SpinnerState from "@/common/service/common/SpinnerState";
 
 const routes = [
   {
     path: '/',
-    component:Main,
-    meta:{title:'HOME', isLogo:true, isBack:false, isHome:false}
+    component:Main
+  },
+  {
+    path: '/join',
+    component: Join,
+  },{
+    path: '/join2',
+    component: Join2,
+    name: 'Params',
   }
 ]
 
