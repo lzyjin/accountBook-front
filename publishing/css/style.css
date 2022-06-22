@@ -17,6 +17,7 @@ body {
 
 /* button ---------- */
 /*회색버튼*/
+.button--gray { display: block; width: 100%; border: none; background: var(--lightGray); padding: 1rem; border-radius: 10px; }
 /*핑크버튼*/
 
 /* header ---------- */
@@ -102,6 +103,7 @@ body {
 .content__form .validate { margin-top: 5px; font-size: 13px; }
 .content__form .validate.alert { color: var(--alert); }
 .content__form .validate.success { color: var(--success); }
+.content__form .button--subcategory { margin-bottom: 20px; }
 
 
 .content__category {  }
@@ -117,20 +119,23 @@ body {
 
 /* 모달 */
 .modal { z-index: 1; width: 100%; position: fixed; left: 0; bottom: 0; background: #fff; border-radius: 30px 30px 0 0; padding: 5%; }
-.modal__top { display: flex; padding-bottom: 10px; border-bottom: 1px solid var(--lightGray); }
-.modal__top .modal__date { font-weight: bold; }
-.modal__top .modal__button--close { margin-left: auto; }
-.modal__content {}
-.modal__content .modal__total { display: flex; padding-top: 5px; padding-bottom: 5px; border-bottom: 1px solid var(--lightGray); }
-.modal__content .modal__total .text { margin-right: auto; }
-.modal__content .modal__total .income { color: var(--pink);  }
-.modal__content .modal__total .expense { margin-left: 1rem; }
-.modal__list {  }
-.modal__item { display: flex; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--lightGray);  }
-.modal__item .icon { width: 30px; height: 30px; background: var(--lightGray); display: flex; justify-content: center; align-items: center; border-radius: 50%; }
-.modal__item .icon i { font-size: 0.7rem; }
-.modal__item .info {  }
-.modal__item .price { margin-left: auto; }
+.modal__top { display: flex; padding-top: 10px; padding-bottom: 30px; border-bottom: 1px solid var(--lightGray); }
+.modal__top .date { font-weight: bold; font-size: 1.3rem; }
+.modal__top .total-money { font-weight: bold; font-size: 1.3rem; }
+.modal__top .button--close-modal { position: absolute; right: 30px; top: 20px; }
+.modal__top .button--close-modal { font-size: 20px; }
+.modal .modal__content .oneday-list { margin-bottom: 30px; }
+.modal .modal__content .oneday-list-section { display: flex; padding: 10px 0; border-bottom: 1px solid var(--lightGray); }
+.modal .modal__content .oneday-list-section:last-child { border-bottom: none; }
+.modal .modal__content .oneday-list-section .title { width: 15%; }
+.modal .modal__content .oneday-list-section .desc { width: 85%; display: flex; align-items: center; }
+.modal .modal__content .oneday-list-section .desc .icon { margin-right: 10px; width: 25px; height: 25px; background: var(--lightGray); display: flex; justify-content: center; align-items: center; font-size: 1.5rem; border-radius: 50%; }
+.modal .modal__content .oneday-list-section .desc .icon i { font-size: 12px; }
+.modal .modal__content .button-wrap { display: flex; gap: 10px;  }
+.modal .modal__content .button-delete { background: var(--lightGray); border-radius: 10px; width: 60px; height: 60px; }
+.modal .modal__content .button-delete i { font-size: 20px; }
+.modal .modal__content .button-save { color: #fff; font-weight: bold; background: var(--pink); width: 100%; border-radius: 10px; }
+
 
 /* 간편로그인 */
 .numberpad { position: absolute; left: 0; bottom: 0; width: 100%; height: 50vh; background: var(--pink); display: grid; grid-template-columns: repeat(3, 1fr); }
