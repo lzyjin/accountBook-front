@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>하루 내역</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" maximun-scale="1.0", minimun-scale="1.0", user-scalable="no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body id="modalListDaily" style="background: rgba(0,0,0,0.7);">
+    <div class="modal">
+        <div class="modal__top">
+            <h1 class="total-money">56,000원</h1>
+            <button class="button--close-modal">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="modal__content">
+            <div class="oneday-list">
+                <div class="oneday-list-section">
+                    <div class="title">분류</div>
+                    <div class="desc">
+                        <div class="tab-money-list">
+                            <div class="tab-money-item active">지출</div>
+                            <div class="tab-money-item">수입</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="oneday-list-section">
+                    <div class="title">항목</div>
+                    <div class="desc">
+                        <div class="icon">
+                            <i class="fas fa-bus"></i>
+                        </div>
+                        <span>식비 > 집밥</span>
+                    </div>
+                </div>
+                <div class="oneday-list-section">
+                    <div class="title">날짜</div>
+                    <div class="desc">
+                        <div>2022년 6월 3일 수요일</div>
+                    </div>
+                </div>
+                <div class="oneday-list-section">
+                    <div class="title">메모</div>
+                    <div class="desc">
+                        <div>이마트 장봄 - 천도복숭아</div>
+                    </div>
+                </div>
+            </div>
+            <div class="button-wrap">
+                <button class="button-delete">
+                    <i class="fas fa-trash"></i>
+                </button>
+                <button class="button-save">저장</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
