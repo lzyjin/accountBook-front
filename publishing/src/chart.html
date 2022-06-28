@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>통계</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" maximun-scale="1.0", minimun-scale="1.0", user-scalable="no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body id="chart">
+    <header class="header">
+        <div class="header__title">
+            <h1 class="title">통계</h1>
+            <div class="button">
+                <div class="button__item button__item--search">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="button__item button__item--filter">
+                    <i class="fas fa-filter"></i>
+                </div>
+            </div>
+        </div>
+        <div class="header__select-month">
+            <div class="inner">
+                <div class="button button--prev">
+                    <i class="fas fa-caret-left"></i>
+                </div>
+                <div class="month">2002년 5월</div>
+                <div class="button button--next">
+                    <i class="fas fa-caret-right"></i>
+                </div>
+            </div>
+        </div>
+        <div class="header__money">
+            <div class="money__item money__item--income">
+                <div class="money__category">지출</div>
+                <div class="money__amount">534,000원</div>
+            </div>
+            <div class="money__item money__item--expense">
+                <div class="money__category">수입</div>
+                <div class="money__amount">2,534,000원</div>
+            </div>
+        </div>
+    </header>
+
+    <main class="content">
+        <div class="circle-chart">
+            <div class="circle"></div>
+        </div>
+        <div class="bar-chart">
+            <div class="bar-chart-item">
+                <div class="percent">75%</div>
+                <div class="icon">
+                    <i class="fas fa-bus"></i>
+                </div>
+                <div class="category">식비</div>
+                <div class="bar">
+                    <div class="color" style="width: 70%"></div>
+                </div>
+                <div class="price">187,000원</div>
+            </div>
+            <div class="bar-chart-item">
+                <div class="percent">40%</div>
+                <div class="icon">
+                    <i class="fas fa-bus"></i>
+                </div>
+                <div class="category">데이트</div>
+                <div class="bar">
+                    <div class="color" style="width: 40%"></div>
+                </div>
+                <div class="price">50,000원</div>
+            </div>
+            <div class="bar-chart-item">
+                <div class="percent">10%</div>
+                <div class="icon">
+                    <i class="fas fa-bus"></i>
+                </div>
+                <div class="category">생활용품</div>
+                <div class="bar">
+                    <div class="color" style="width: 10%"></div>
+                </div>
+                <div class="price">31,000원</div>
+            </div><div class="bar-chart-item">
+                <div class="percent">5%</div>
+                <div class="icon">
+                    <i class="fas fa-bus"></i>
+                </div>
+                <div class="category">의료비</div>
+                <div class="bar">
+                    <div class="color" style="width: 5%"></div>
+                </div>
+                <div class="price">1,000원</div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__item footer__item--book">
+            <i class="fas fa-wallet"></i>
+            <p class="">가계부</p>
+        </div>
+        <div class="footer__item footer__item--chart">
+            <i class="fas fa-chart-pie"></i>
+            <p class="">통계</p>
+        </div>
+        <div class="footer__item footer__item--setting">
+            <i class="fas fa-bars"></i>
+            <p class="">전체</p>
+        </div>
+    </footer>
+</body>
+</html>
