@@ -1,5 +1,5 @@
 ## Figma Link
-Link: [Figma](https://www.figma.com/proto/TpQfdMwRunXc4CEDsUmlol/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8---%EA%B0%80%EA%B3%84%EB%B6%80?page-id=0%3A1&node-id=1%3A2&starting-point-node-id=1%3A2)
+Link: [Figma Link](https://www.figma.com/proto/TpQfdMwRunXc4CEDsUmlol/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8---%EA%B0%80%EA%B3%84%EB%B6%80?page-id=0%3A1&node-id=1%3A2&starting-point-node-id=1%3A2)
 
 ## Vue2-Base
 
