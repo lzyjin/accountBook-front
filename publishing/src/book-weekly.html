@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>가계부-주간</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" maximun-scale="1.0", minimun-scale="1.0", user-scalable="no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body id="book">
+    <header class="header">
+        <div class="header__title">
+            <h1 class="title">가계부</h1>
+            <div class="button">
+                <div class="button__item button__item--search">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="button__item button__item--filter">
+                    <i class="fas fa-filter"></i>
+                </div>
+            </div>
+        </div>
+        <div class="header__select-month">
+            <div class="inner">
+                <div class="button button--prev">
+                    <i class="fas fa-caret-left"></i>
+                </div>
+                <div class="month">2002년 5월</div>
+                <div class="button button--next">
+                    <i class="fas fa-caret-right"></i>
+                </div>
+            </div>
+        </div>
+        <div class="header__money">
+            <div class="money__item money__item--income">
+                <div class="money__category">지출</div>
+                <div class="money__amount">534,000원</div>
+            </div>
+            <div class="money__item money__item--expense">
+                <div class="money__category">수입</div>
+                <div class="money__amount">2,534,000원</div>
+            </div>
+        </div>
+        <div class="header__tab">
+            <div class="tab--item monthly">월간</div>
+            <div class="tab--item weekly active">주간</div>
+            <div class="tab--item daily">일간</div>
+        </div>
+    </header>
+
+    <main class="content">
+        <div class="book-weekly-list">
+            <div class="book-weekly-item">
+                <div class="item-content item-content-week">
+                    <p class="week week-number">1주차</p>
+                    <h1 class="week week-period">5월 1일</h1>
+                </div>
+                <div class="item-content item-content-money">
+                    <p class="money money-income">+152,305,700원</p>
+                    <p class="money money-expense">-712,995원</p>
+                </div>
+            </div>
+            <div class="book-weekly-item">
+                <div class="item-content item-content-week">
+                    <p class="week week-number">2주차</p>
+                    <h1 class="week week-period">5월 2일 ~ 5월 8일</h1>
+                </div>
+                <div class="item-content item-content-money">
+                    <p class="money money-income">+0원</p>
+                    <p class="money money-expense">-15,000원</p>
+                </div>
+            </div>
+            <div class="book-weekly-item">
+                <div class="item-content item-content-week">
+                    <p class="week week-number">3주차</p>
+                    <h1 class="week week-period">5월 5일 ~ 5월 15일</h1>
+                </div>
+                <div class="item-content item-content-money">
+                    <p class="money money-income">+150원</p>
+                    <p class="money money-expense">-7,650원</p>
+                </div>
+            </div>
+            <div class="book-weekly-item this-week">
+                <div class="item-content item-content-week">
+                    <p class="week week-number">4주차
+                        <i class="this-week-tag">이번주</i>
+                    </p>
+                    <h1 class="week week-period">5월 16일 ~ 5월 22일</h1>
+                </div>
+                <div class="item-content item-content-money">
+                    <p class="money money-income">+0원</p>
+                    <p class="money money-expense">-0원</p>
+                </div>
+            </div>
+            <div class="book-weekly-item">
+                <div class="item-content item-content-week">
+                    <p class="week week-number">5주차</p>
+                    <h1 class="week week-period">5월 23일 ~ 5월 29일</h1>
+                </div>
+                <div class="item-content item-content-money">
+                    <p class="money money-income">+500원</p>
+                    <p class="money money-expense">-75,150원</p>
+                </div>
+            </div>
+            <div class="book-weekly-item">
+                <div class="item-content item-content-week">
+                    <p class="week week-number">6주차</p>
+                    <h1 class="week week-period">5월 30일 ~ 5월 31일</h1>
+                </div>
+                <div class="item-content item-content-money">
+                    <p class="money money-income">+0원</p>
+                    <p class="money money-expense">-123,456원</p>
+                </div>
+            </div>
+        </div>
+        <div class="button--add-list">
+            <i class="fas fa-plus"></i>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__item footer__item--book">
+            <i class="fas fa-wallet"></i>
+            <p class="">가계부</p>
+        </div>
+        <div class="footer__item footer__item--chart">
+            <i class="fas fa-chart-pie"></i>
+            <p class="">통계</p>
+        </div>
+        <div class="footer__item footer__item--setting">
+            <i class="fas fa-bars"></i>
+            <p class="">전체</p>
+        </div>
+    </footer>
+</body>
+</html>

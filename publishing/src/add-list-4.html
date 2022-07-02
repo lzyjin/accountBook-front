@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>내역추가-메모</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" maximun-scale="1.0", minimun-scale="1.0", user-scalable="no">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
     <link rel="stylesheet" href="../css/reset.css">
@@ -14,7 +14,7 @@
             <h1 class="button--prev-page">
                 <i class="fas fa-angle-left"></i>
                 <i class="fas fa-utensils"></i>
-                식비 > 외식 / 카페 / 배달
+                식비 > 집밥
             </h1>
             <div class="button">
                 <div class="button__item button__item--close">
@@ -25,13 +25,12 @@
     </header>
     <main class="content">
         <div class="content__top">
-            <h1 class="top__title">결제 방법 선택</h1>
+            <h1 class="top__title">메모</h1>
         </div>
-        <div class="content__list">
-            <div class="content__item">체크카드</div>
-            <div class="content__item">신용카드</div>
-            <div class="content__item">현금</div>
-        </div>
+        <form class="content__form">
+            <textarea class="memo"></textarea>
+            <div class="button--save">내역 저장</div>
+        </form>
     </main>
 
 </body>

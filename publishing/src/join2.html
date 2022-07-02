@@ -2,41 +2,47 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>로그인</title>
+    <title>회원가입2</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" maximun-scale="1.0", minimun-scale="1.0", user-scalable="no">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body id="login">
-    <header>
-
+    <header class="header">
+        <div class="header__title">
+            <h1 class="button--prev-page">
+                <i class="fas fa-angle-left"></i>
+            </h1>
+            <h2>회원가입</h2>
+        </div>
     </header>
     <main class="content">
         <div class="content__top">
-            <h1 class="top__title">로그인</h1>
+<!-- <h1 class="top__title">회원가입</h1>-->
         </div>
         <div class="content__form">
             <div class="form-item">
-                <label>아이디</label>
-                <div class="input-wrap">
-                    <input type="text" name="">
-                    <div class="btn-input-reset">
-                        <i class="fas fa-times"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="form-item">
-                <label>비밀번호</label>
+                <label>비밀번호 입력</label>
                 <div class="input-wrap">
                     <input type="password" name="">
                     <div class="btn-input-reset">
                         <i class="fas fa-times"></i>
                     </div>
                 </div>
+                <p class="validate success">비밀번호가 형식에 맞습니다.</p>
             </div>
-            <button class="button--login">로그인</button>
-            <p class="btn-join">회원가입하기</p>
+            <div class="form-item">
+                <label>비밀번호 확인</label>
+                <div class="input-wrap">
+                    <input type="password" name="">
+                    <div class="btn-input-reset">
+                        <i class="fas fa-times"></i>
+                    </div>
+                </div>
+                <p class="validate alert">비밀번호가 일치하지 않습니다.</p>
+            </div>
+            <button class="button--join--sub">계속하기</button>
         </div>
     </main>
     <footer>
