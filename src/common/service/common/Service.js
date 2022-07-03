@@ -51,6 +51,7 @@ class Service{
         })
     }
     post(path,payload){
+        console.log("path : "+path);
         return this.$axios.request({
             method:"post",
             url:path,

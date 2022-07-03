@@ -22,6 +22,12 @@ class UserSvc extends Service {
             }
         )
     }
-
+    signUp(param={}) {
+        return this.post('/api/user/signUp', param)
+            .then(response => {
+                console.log("responseData : ",response);
+                return response;
+            });
+    }
 }
 export default new UserSvc()

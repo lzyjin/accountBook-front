@@ -5,6 +5,15 @@
     </div>
     <div class="content__form">
       <div>
+        <label>이름 입력</label>
+        <div class="input-wrap">
+          <input type="text" name="" v-model="userName" ref="userName">
+          <div v-if="this.userName !== ''" class="btn-input-reset" @click="fnNameReset">
+
+          </div>
+        </div>
+      </div>
+      <div>
         <label>이메일 입력</label>
         <div class="input-wrap">
           <input type="text" name="" v-model="id" ref="id">
@@ -41,16 +50,26 @@
     data(){
       return {
         id: '',
+        userName: '',
       }
     },
     methods:{
       fnIdReset(){
         this.id = '';
       },
-      async fnJoin2(){
+      fnNameReset(){
+        this.userName = '';
+      },
+      fnJoin2(){
+        if(this.userName === '' || this.userName === undefined){
+          alert("이름을 입력해주세요.");
+          this.$refs.userName.focus();
+          return;
+        }
         if(this.id === '' || this.id === undefined){
           alert("이메일을 입력해주세요.");
-          this.$refs.id.focus()
+          this.$refs.id.focus();
+          return;
         }else{
           if(!fnValidation(this.id)){
             alert("이메일 형식이 올바르지않습니다.");
@@ -58,7 +77,7 @@
           }else{
             //api통신 중복id확인
             //const response = await UserSvc.userIdCheck({userId:this.id});
-            this.$router.push({path:'/join2',name:'Params', params: {id:this.id}});
+            this.$router.push({path:'/join2',name:'Params', params: {id:this.id, name:this.userName}});
           }
         }
       },

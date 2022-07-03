@@ -31,9 +31,12 @@
 </template>
 
 <script>
+import UserSvc from "@/common/service/UserSvc";
+
   export default {
     beforeMount() {
-      this.id = this.$route.params.id
+      this.id = this.$route.params.id;
+      this.userName = this.$route.params.name;
     },
     data(){
       return {
@@ -68,19 +71,34 @@
         this.passwordChk = '';
         this.$refs.passwordChk.focus();
       },
-      fnJoin(){
+      async fnJoin(){
         if(this.password === '' || this.password === undefined){
           alert("비밀번호를 입력해주세요.");
           this.$refs.password.focus();
           return false;
         }
-
         if(this.passwordChk === '' || this.passwordChk === undefined){
           alert("비밀번호 확인을 입력해주세요.");
           this.$refs.passwordChk.focus();
           return false;
         }
+        if(this.password !== this.passwordChk){
+          alert("비밀번호와 비밀번호 확인이 다릅니다.");
+          return;
+        }
+        if(!this.validatePwdChk){
+          alert("비밀번호는 8자 이상, 숫자/대문자/소문자/특수문자를 모두 포함해야합니다.");
+          return;
+        }
+        console.log(this.$UserSvc)
+        const response = await this.$UserSvc.signUp({
+            userId:this.id,
+            password:this.password,
+            userName:this.userName
+          }
+        );
 
+        console.log(response)
 
       }
     },

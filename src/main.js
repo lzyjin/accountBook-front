@@ -26,7 +26,6 @@ Vue.prototype.$FooterControl =  FooterControl
 Vue.prototype.$ModalList =  ModalList
 Vue.prototype.$Constants = Constants
 
-
 //import Svc
 import UserSvc from '@/common/service/UserSvc'
 //Svc
@@ -88,5 +87,3 @@ console.info("*   | ___ \\ / _` |/ __| / _ \\  | | | || | | | / _ \\     / /   *
 console.info("*   | |_/ /| (_| |\\__ \\|  __/  \\ \\_/ /| |_| ||  __/   ./ /___   *")
 console.info("*   \\____/  \\__,_||___/ \\___|   \\___/  \\__,_| \\___|   \\_____/   *")
 console.info(" * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  ")
-
-

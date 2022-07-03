@@ -21,6 +21,9 @@ Vue.use(VueRouter)
 import Main from '@/views/user/login/index';
 import Join from '@/views/user/join/index'; //회원가입1
 import Join2 from '@/views/user/join2/index'; //회원가입2
+import EasyLogin from '@/views/user/easyLogin';
+import Monthly from '@/views/account/monthly';
+
 import SpinnerState from "@/common/service/common/SpinnerState";
 
 const routes = [
@@ -35,6 +38,12 @@ const routes = [
     path: '/join2',
     component: Join2,
     name: 'Params',
+  },{
+    path: '/easyLogin',
+    component:EasyLogin,
+  },{
+    path: '/monthly',
+    component: Monthly,
   }
 ]
 

@@ -7,12 +7,17 @@ body {
     --lightGray: #f1f1f1;
     --darkGray: #555;
     --gray: #d1d1d1;
+    --black: #000;
+    --alert: red;
+    --success: green;
+
     font-size: 16px;
     color: #000;
 }
 
 /* button ---------- */
 /*회색버튼*/
+.button--gray { display: block; width: 100%; border: none; background: var(--lightGray); padding: 1rem; border-radius: 10px; }
 /*핑크버튼*/
 
 /* header ---------- */
@@ -21,21 +26,30 @@ body {
 /*좌측타이틀 우측닫기버튼*/
 
 
+/* 지출/수입 탭 */
+.tab-money-list { display: flex; flex-direction: row; align-items: flex-start; padding: 2px; width: 100%; height: 42px; background: rgba(118, 118, 128, 0.12); border-radius: 8.91px; flex: none; order: 1; flex-grow: 0;
+}
+.tab-money-list .tab-money-item { cursor: pointer; line-height: 38px; text-align: center; width: 50%; height: 38px; flex: none; order: 1; align-self: stretch; flex-grow: 1; }
+.tab-money-list .tab-money-item.active { width: 50%; background: #FFFFFF; border: 0.5px solid rgba(0, 0, 0, 0.04); box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.12), 0px 3px 1px rgba(0, 0, 0, 0.04); border-radius: 6.93px; flex: none; order: 0; align-self: stretch; flex-grow: 1; }
+
+/* 인트로 */
 #intro { background: var(--pink); }
 #intro .title { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); text-align: center; }
 #intro .title--icon { color: #fff; font-size: 4rem; margin-bottom: 1rem; }
 #intro .title--text { color: #fff; }
 
+/* 로그인 */
 #login {  }
 #login main {  }
 #login main .top {  }
 #login main .top__title { font-size: 2rem; }
 
+
 #book {  }
-.header { width: 100%;  }
+
+.header { width: 100%; /*position: fixed; left: 0; top: 0;*/  }
 .header>div { border-bottom: 1px solid var(--lightGray); }
-.header .header__title { font-weight: bold; height: 50px; display: flex; align-items: center;
-    padding: 0 5%; }
+.header .header__title { font-weight: bold; height: 50px; display: flex; align-items: center; padding: 0 5%; }
 .header .title { font-size: 2rem; }
 .header .button--prev-page { color: var(--pink); }
 .header .header__title .button { margin-left: auto; display: flex; align-items: center; gap: 0.5rem; }
@@ -55,10 +69,11 @@ body {
 .header .tab--item { flex: 1; text-align: center; padding: 1rem; }
 .header .tab--item.active { color: var(--pink); font-weight: bold; border-bottom: 5px solid var(--pink); }
 
-.footer { border-top: 1px solid var(--lightGray); width: 100%; position: fixed; left: 0; bottom: 0; display: flex; }
+.footer { background: #fff; border-top: 1px solid var(--lightGray); width: 100%; position: fixed; left: 0; bottom: 0; display: flex; }
 .footer .footer__item { flex: 1; text-align: center; padding: 1rem; }
 .footer .footer__item i { font-size: 1.5rem; margin-bottom: 0.3rem;}
 
+/* 내역추가버튼 */
 .button--add-list { position: fixed; right: 8%; bottom: 12%; border-radius: 50%; padding: 1rem; background: var(--pink); }
 .button--add-list i { color: #fff; font-size: 3rem; }
 
@@ -67,6 +82,7 @@ body {
 .content__top .top__title { font-size: 2rem; margin-bottom: 2rem; margin-left: 5%; font-weight: bold; }
 .content__top .top__title--center { text-align: center; font-size: 1rem; font-weight: bold; }
 .content__form { width: 90%; margin: 0 auto; }
+.content__form .form-item { margin-bottom: 20px; }
 .content__form .input-wrap { position: relative; }
 .content__form .input-wrap .btn-input-reset { position: absolute; right: 15px; top: 50%; transform: translateY(-50%); width: 15px; height: 15px; display: flex; justify-content: center; align-items: center; border-radius: 50%; background: var(--gray); cursor: pointer; }
 .content__form .input-wrap .btn-input-reset i { color: #fff; font-size: 10px; }
@@ -75,8 +91,8 @@ body {
 .content__form .input i { position: absolute; top: 50%; transform: translateY(-50%); }
 .content__form .input--date i { right: 5%; }
 .content__form .input--money i { left: 5%; }
-.content__form label { display: block; width: 100%; margin-bottom: 0.5rem; }
-.content__form input { display: block; width: 100%; border: none; background: var(--lightGray); padding: 1rem; border-radius: 10px; margin-bottom: 1rem; }
+.content__form label { font-size: 18px; font-weight: bold; display: block; width: 100%; margin-bottom: 0.5rem; }
+.content__form input { display: block; width: 100%; border: none; background: var(--lightGray); padding: 1rem; border-radius: 10px; }
 .content__form .input--money input { text-align: right; }
 .content__form .memo { background: var(--lightGray); padding: 1rem; border-radius: 10px; width: 100%; height: 50vh; border: none; resize: none; }
 .content__form .memo:focus { outline: none; }
@@ -84,6 +100,10 @@ body {
 .content__form .button--save { text-align: center; margin-top: 1rem; background: var(--pink); width: 100%; padding: 1rem; color: #fff; border-radius: 10px; font-weight: bold; font-size: 1.5rem; }
 .content__form .btn-join { text-align: center; color: var(--darkGray); margin-top: 20px; text-decoration: underline; }
 .content__form .button--join--sub { position: absolute; left: 50%; bottom: 20px; transform: translateX(-50%); background: var(--gray); width: 90%; padding: 1rem; color: #fff; border-radius: 10px; font-weight: bold; font-size: 1.5rem; }
+.content__form .validate { margin-top: 5px; font-size: 13px; }
+.content__form .validate.alert { color: var(--alert); }
+.content__form .validate.success { color: var(--success); }
+.content__form .button--subcategory { margin-bottom: 20px; }
 
 
 .content__category {  }
@@ -97,26 +117,76 @@ body {
 
 #addList {}
 
+/* 모달 */
 .modal { z-index: 1; width: 100%; position: fixed; left: 0; bottom: 0; background: #fff; border-radius: 30px 30px 0 0; padding: 5%; }
-.modal__top { display: flex; padding-bottom: 10px; border-bottom: 1px solid var(--lightGray); }
-.modal__top .modal__date { font-weight: bold; }
-.modal__top .modal__button--close { margin-left: auto; }
-.modal__content {}
-.modal__content .modal__total { display: flex; padding-top: 5px; padding-bottom: 5px; border-bottom: 1px solid var(--lightGray); }
-.modal__content .modal__total .text { margin-right: auto; }
-.modal__content .modal__total .income { color: var(--pink);  }
-.modal__content .modal__total .expense { margin-left: 1rem; }
-.modal__list {  }
-.modal__item { display: flex; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--lightGray);  }
-.modal__item .icon { width: 30px; height: 30px; background: var(--lightGray); display: flex; justify-content: center; align-items: center; border-radius: 50%; }
-.modal__item .icon i { font-size: 0.7rem; }
-.modal__item .info {  }
-.modal__item .price { margin-left: auto; }
+.modal__top { display: flex; padding-top: 10px; padding-bottom: 30px; border-bottom: 1px solid var(--lightGray); }
+.modal__top .date { font-weight: bold; font-size: 1.3rem; }
+.modal__top .total-money { font-weight: bold; font-size: 1.3rem; }
+.modal__top .button--close-modal { position: absolute; right: 30px; top: 20px; }
+.modal__top .button--close-modal { font-size: 20px; }
+.modal .modal__content .oneday-list { margin-bottom: 30px; }
+.modal .modal__content .oneday-list-section { display: flex; padding: 10px 0; border-bottom: 1px solid var(--lightGray); }
+.modal .modal__content .oneday-list-section:last-child { border-bottom: none; }
+.modal .modal__content .oneday-list-section .title { width: 15%; }
+.modal .modal__content .oneday-list-section .desc { width: 85%; display: flex; align-items: center; }
+.modal .modal__content .oneday-list-section .desc .icon { margin-right: 10px; width: 25px; height: 25px; background: var(--lightGray); display: flex; justify-content: center; align-items: center; font-size: 1.5rem; border-radius: 50%; }
+.modal .modal__content .oneday-list-section .desc .icon i { font-size: 12px; }
+.modal .modal__content .button-wrap { display: flex; gap: 10px;  }
+.modal .modal__content .button-delete { background: var(--lightGray); border-radius: 10px; width: 60px; height: 60px; }
+.modal .modal__content .button-delete i { font-size: 20px; }
+.modal .modal__content .button-save { color: #fff; font-weight: bold; background: var(--pink); width: 100%; border-radius: 10px; }
 
 
+/* 간편로그인 */
 .numberpad { position: absolute; left: 0; bottom: 0; width: 100%; height: 50vh; background: var(--pink); display: grid; grid-template-columns: repeat(3, 1fr); }
 .numberpad .numberkey { cursor: pointer; display: flex; justify-content: center; align-items: center; color: #fff;
     font-size: 18px; }
 .easy-password-wrap { width: 50vw; margin: 0 auto; margin-top: 50px; display: flex; justify-content: space-between; align-items: center; }
 .easy-password.off { width: 20px; height:3px; background: var(--gray); }
 .easy-password.on { width: 20px; height: 20px; border-radius: 50%; background: var(--pink); }
+
+/* 가계부-주간 */
+.book-weekly-list {  }
+.book-weekly-item { display: flex; justify-content: space-between;border-bottom: 1px solid var(--lightGray); padding: 10px; }
+.book-weekly-item.this-week {  }
+.book-weekly-item .item-content {  }
+.book-weekly-item .item-content-week {}
+.book-weekly-item .item-content-week .week {}
+.book-weekly-item .item-content-week .week-number { color: var(--gray); margin-bottom: 10px; }
+.book-weekly-item .item-content-week .week-number .this-week-tag { border: 2px solid var(--pink); color: var(--pink); border-radius: 50px; padding: 0 5px; }
+.book-weekly-item .item-content-week .week-period { font-size: 20px; }
+.book-weekly-item .item-content-money {}
+.book-weekly-item .item-content-money .money { text-align: right; }
+.book-weekly-item .item-content-money .money-income { color: var(--pink); font-weight: bold; margin-bottom: 10px; }
+.book-weekly-item .item-content-money .money-expense { color: var(--black); font-weight: bold; }
+
+/* 가계부-일간 */
+.book-daily-list { width: 95%; margin: 0 auto;}
+.book-daily-list-component {
+    margin-bottom: 30px; }
+.book-daily-list-component.today {}
+.book-daily-date { border-bottom: 1px solid var(--lightGray); display: flex; justify-content: space-between; padding: 10px; margin-bottom: 10px; }
+.book-daily-date .date { color: var(--gray); }
+.book-daily-date .date .today-tag {}
+.book-daily-date .total-money { display: flex; gap: 20px; }
+.book-daily-date .total-money .money {}
+.book-daily-date .total-money .money-income { color: var(--pink); font-weight: bold; }
+.book-daily-date .total-money .money-expense { color: var(--black); font-weight: bold; }
+.book-daily-items {  }
+.book-daily-item { padding: 10px; display: flex; align-items: center; }
+.book-daily-item .item-content {}
+.book-daily-item .item-content-icon { margin-right: 10px; min-width: 40px; width: 40px; height: 40px; background: var(--lightGray); display: flex; justify-content: center; align-items: center; font-size: 1.5rem; border-radius: 50%; }
+.book-daily-item-income .item-content-icon { background: var(--lightPink); }
+.book-daily-item .item-content-icon i { font-size: 1rem;  }
+.book-daily-item .item-content-memo { width: 50%; }
+.book-daily-item .item-content-memo .memo {}
+.book-daily-item .item-content-memo .category-wrap {}
+.book-daily-item .item-content-memo .category { font-size: 13px; color: var(--gray); }
+.book-daily-item .item-content-memo .category-main { position: relative; }
+.book-daily-item .item-content-memo .category-main::after { content: '>'; margin-left: 5px; }
+.book-daily-item .item-content-memo .category-sub {}
+.book-daily-item .item-content-money {
+    margin-left: auto; }
+.book-daily-item .item-content-money .money {  }
+.book-daily-item .item-content-money .money-income { color: var(--pink); font-weight: bold; }
+.book-daily-item .item-content-money .money-expense { color: var(--black); font-weight: bold; }
