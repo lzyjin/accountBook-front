@@ -15,8 +15,7 @@ export default ({
     actions:{
         setAuthorization(commit, {authorization='', refreshToken=''}){
             commit('setAuthorization', {authorization, refreshToken})
-            localStorage.setItem("accessToken", authorization)
-            localStorage.setItem("refreshToken", refreshToken)
+
         },
         setUserData(commit, {userData={
             userNo:'',

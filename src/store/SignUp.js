@@ -9,13 +9,14 @@ export default ({
 
     },
     mutations:{
-        setSignUpStep1({state}, {id, userName}) {
+        setSignUpStep1(state, {id, userName}) {
             state.user.id = id
             state.user.userName=userName
         }
     },
     actions:{
         setSignUpStep1({commit},{id, userName}){
+            console.log("action", id, userName)
             commit('setSignUpStep1', {id, userName})
         }
     },

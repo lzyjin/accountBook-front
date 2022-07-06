@@ -21,7 +21,7 @@
            <p class="validation" v-show="$v.id.$error||!meta.usable">{{validMsg()}}</p>
            <p class="successValidation" v-show="meta.visible&&meta.usable">사용 가능한 아이디입니다.</p>
       </div>
-      <button class="button--join--sub" @click="fnJoin2">계속하기</button>
+      <button class="button--join--sub" :style="coloring" @click="fnJoin2">계속하기</button>
     </div>
   </div>
 </template>
@@ -41,6 +41,11 @@
         userName: '',
       }
     },
+    computed:{
+      coloring(){
+        return this.id.length>0&&this.userName.length>0? "background:var(--pink)":"background:var(--gray)";
+      }
+    },
     validations:{
       id:{
            required:required,
@@ -57,7 +62,6 @@
       fnNameReset(){
         this.userName = '';
       },
-
       validMsg(){
            if(this.$v.id.$error){
                return "이메일 형식으로 아이디를 올바르게 입력해주세요."
@@ -67,11 +71,17 @@
            }
            return ""
       },
-      fnJoin2(){
+      async fnJoin2(){
            this.$v.$touch()
            if(this.$v.$invalid&&(!this.meta.usable||!this.meta.visible)){
                 return
            }
+           const response = await this.$UserSvc.checkId({userId:this.id})
+           if(response.code!==200){
+             this.meta.usable=false
+             return
+           }
+
             this.$store.dispatch("signup/setSignUpStep1", {id: this.id, userName: this.userName})
             this.$router.push({path:'/signUp/step2'});
       },

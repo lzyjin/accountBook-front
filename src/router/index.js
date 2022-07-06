@@ -22,6 +22,8 @@ Vue.use(VueRouter)
  import SignIn from '@/views/user/login/index'
  import SignUpStep1 from '@/views/user/join/index'
  import SignUpStep2 from '@/views/user/join2/index'
+ import EasySign from "@/views/user/easySign";
+ import Main from "@/views/user/main";
 import SpinnerState from "@/common/service/common/SpinnerState";
 
 const routes = [
@@ -38,12 +40,22 @@ const routes = [
   {
     path:'/signUp/step1',
     component:SignUpStep1,
-    meta:{title:"Step 1", isLogo:true, isBack: false, headerIsShow:true, footerIsShow:false}
+    meta:{title:"Step 1", isLogo:false, isBack: true, headerIsShow:true, footerIsShow:false}
   },
   {
     path:"/signUp/step2",
     component: SignUpStep2,
-    meta:{title:"Step 2", isLogo:false, isBack: false, headerIsShow:true, footerIsShow:false}
+    meta:{title:"Step 2", isLogo:false, isBack: true, headerIsShow:true, footerIsShow:false}
+  },
+  {
+    path:"/easySign",
+    component: EasySign,
+    meta:{title:"Step 2", isLogo:false, isBack: false, headerIsShow:false, footerIsShow:false}
+  },
+  {
+    path:"/main",
+    component: Main,
+    meta:{title:"", isLogo:true, isBack: false, headerIsShow:true, footerIsShow:true}
   }
 ]
 
@@ -60,11 +72,11 @@ const router = new VueRouter({
 })
 router.beforeEach((to, from, next) =>{
   spinner.activeSpinner(false)
+  setTimeout(() => {spinner.deActiveSpinner()}, 500)
   const header = to.meta
   headerControl.setHeader(header.title, header.isLogo, header.isBack, header.isHome, header.headerIsShow)
   headerControl.setFooter(header.footerIsShow)
   next()
-  setTimeout(() => {spinner.deActiveSpinner()}, 500)
 
 })
 export default router

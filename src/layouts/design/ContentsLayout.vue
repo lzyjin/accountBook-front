@@ -7,11 +7,6 @@
 <script>
 export default {
   name: "ContentsLayout",
-  beforeMount() {
-   const timeOut = setTimeout(()=>{
-        this.$router.replace("/signIn")
-   },2000)
-  },
   computed:{
        resize(){
             if(!this.$HeaderControl.getHeader().isShow&&!this.$HeaderControl.getFooter().isShow){

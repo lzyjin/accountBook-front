@@ -10,6 +10,11 @@
 <script>
 export default {
   name: "splash-index",
+  beforeMount() {
+    const timeOut = setTimeout(()=>{
+      this.$router.replace("/signIn")
+    },2000)
+  },
 
 }
 </script>

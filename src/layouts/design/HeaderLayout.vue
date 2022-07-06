@@ -2,7 +2,7 @@
   <div class="headerLayout">
     <icon icon="fa-solid fa-piggy-bank" size="2x" @click="fnGoHome" v-if="header.isLogo" class="logo-btn"></icon>
     <img :src="require('@/assets/static/necessaries/back-svgrepo-com.svg')" alt="" class="back-btn" @click="fnGoBack" v-if="header.isBack">
-    <h2 class="title-layout">{{header.title}}</h2>
+    <h1 class="title-layout">{{header.title}}</h1>
     <img :src="require('@/assets/static/necessaries/home-svgrepo-com.svg')" alt="" class="home-btn" @click="fnGoHome" v-if="header.isHome">
   </div>
 </template>
@@ -62,7 +62,7 @@ export default {
   }
   .title-layout{
     position: fixed;
-    top: 0.8rem;
+    top: 1rem;
     left: 2.5rem;
     text-align: left;
     font-weight: 600;
