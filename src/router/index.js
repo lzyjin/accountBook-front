@@ -18,32 +18,32 @@ const headerControl = new HeaderControl(store)
 Vue.use(VueRouter)
 
 //page
-import Main from '@/views/user/login/index';
-import Join from '@/views/user/join/index'; //회원가입1
-import Join2 from '@/views/user/join2/index'; //회원가입2
-import EasyLogin from '@/views/user/easyLogin';
-import Monthly from '@/views/account/monthly';
-
+ import Splash from '@/views/splash/index'
+ import SignIn from '@/views/user/login/index'
+ import SignUpStep1 from '@/views/user/join/index'
+ import SignUpStep2 from '@/views/user/join2/index'
 import SpinnerState from "@/common/service/common/SpinnerState";
 
 const routes = [
   {
     path: '/',
-    component:Main
+    component:Splash,
+    meta:{headerIsShow:false, footerIsShow:false},
   },
   {
-    path: '/join',
-    component: Join,
-  },{
-    path: '/join2',
-    component: Join2,
-    name: 'Params',
-  },{
-    path: '/easyLogin',
-    component:EasyLogin,
-  },{
-    path: '/monthly',
-    component: Monthly,
+    path: '/signIn',
+    component: SignIn,
+    meta:{title:"", isLogo:false, isBack: false, headerIsShow:false, footerIsShow:false}
+  },
+  {
+    path:'/signUp/step1',
+    component:SignUpStep1,
+    meta:{title:"Step 1", isLogo:true, isBack: false, headerIsShow:true, footerIsShow:false}
+  },
+  {
+    path:"/signUp/step2",
+    component: SignUpStep2,
+    meta:{title:"Step 2", isLogo:false, isBack: false, headerIsShow:true, footerIsShow:false}
   }
 ]
 
@@ -61,8 +61,8 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) =>{
   spinner.activeSpinner(false)
   const header = to.meta
-  headerControl.setHeader(header.title, header.isLogo, header.isBack, header.isHome)
-
+  headerControl.setHeader(header.title, header.isLogo, header.isBack, header.isHome, header.headerIsShow)
+  headerControl.setFooter(header.footerIsShow)
   next()
   setTimeout(() => {spinner.deActiveSpinner()}, 500)
 

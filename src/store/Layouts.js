@@ -30,7 +30,11 @@ export default({
             title:'',
             isLogo:false,
             isBack:false,
-            isHome:false
+            isHome:false,
+            isShow:true
+        },
+        footerLayout:{
+            isShow:true
         }
     },
     mutations:{
@@ -46,11 +50,18 @@ export default({
         setIsHome(state,{_isHome}){
             state.headerLayout.isHome=_isHome
         },
-        setHeader(state, {title, isLogo, isBack, isHome}){
+        setIsShowHeader(state, {_isShow }) {
+            state.headerLayout.isShow=_isShow
+        },
+        setHeader(state, {title, isLogo, isBack, isHome, isShow}){
             state.headerLayout.title = title
             state.headerLayout.isLogo = isLogo
             state.headerLayout.isBack = isBack
-            state.headerLayout.isHome=isHome
+            state.headerLayout.isHome = isHome
+            state.headerLayout.isShow = isShow
+        },
+        setFooter(state, {isShow}){
+            state.footerLayout.isShow=isShow
         },
         setAlertModal(state,{isAlert=true,
                             isHeader=false,
@@ -159,9 +170,15 @@ export default({
         setIsHome({commit},{_isHome=false}){
             commit('setIsHome',{_isHome})
         },
-        setHeader({commit}, {title, isLogo, isBack, isHome}){
+        setIsShowHeader({commit}, {_isShow=true}){
+            commit('setIsShowHeader',{_isShow})
+        },
+        setHeader({commit}, {title, isLogo, isBack, isHome, isShow}){
 
-            commit('setHeader', {title:title, isLogo:isLogo,isBack:isBack,isHome:isHome})
+            commit('setHeader', {title:title, isLogo:isLogo,isBack:isBack,isHome:isHome, isShow:isShow})
+        },
+        setFooter({commit}, {isShow=true}){
+            commit('setFooter', {isShow})
         },
         setAlertModal({commit},{isAlert=true,
                                 isHeader=false,
@@ -251,7 +268,7 @@ export default({
         getSpinner(state){
             return state.spinner
         },
-        getHeader(state){return state.headerLayout}
-
+        getHeader(state){return state.headerLayout},
+        getFooter(state){return state.footerLayout}
     }
 })

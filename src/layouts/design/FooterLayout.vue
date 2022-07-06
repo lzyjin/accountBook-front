@@ -6,7 +6,8 @@
           @click="fnRoute(item.url)"
           :style="`width:calc(100%/${footer.length})`"
       >
-        <img :src="item.image" alt="">
+<!--        <img :src="item.image" alt="">-->
+        <icon :icon="item.image" :style="item.css"></icon>
         <h2>{{ item.title }}</h2>
       </li>
     </ul>
@@ -19,7 +20,10 @@ export default {
   computed:{
     footer(){
       return this.$FooterControl
-    }
+    },
+     isShow(){
+          return this.$HeaderControl.getHeader().isShow
+     }
   },
   methods:{
     fnRoute(url){
@@ -55,9 +59,9 @@ export default {
   justify-content: center;
   align-items: center;
 }
-.footerLayout img{
-  width: 70%;
-  height: 70%;
-  margin-bottom: 0.5rem;
+.footerLayout svg{
+  width: 45%;
+  height: 45%;
+  margin-bottom: 0.8rem;
 }
 </style>

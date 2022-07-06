@@ -99,7 +99,7 @@ body {
 .content__form .button--login { margin-top: 1rem; background: var(--pink); width: 100%; padding: 1rem; color: #fff; border-radius: 10px; font-weight: bold; font-size: 1.5rem; }
 .content__form .button--save { text-align: center; margin-top: 1rem; background: var(--pink); width: 100%; padding: 1rem; color: #fff; border-radius: 10px; font-weight: bold; font-size: 1.5rem; }
 .content__form .btn-join { text-align: center; color: var(--darkGray); margin-top: 20px; text-decoration: underline; }
-.content__form .button--join--sub { position: absolute; left: 50%; bottom: 20px; transform: translateX(-50%); background: var(--gray); width: 90%; padding: 1rem; color: #fff; border-radius: 10px; font-weight: bold; font-size: 1.5rem; }
+.content__form .button--join--sub { position: absolute; left: 50%; bottom: 0px; transform: translateX(-50%); background: var(--gray); width: 90%; padding: 1rem; color: #fff; border-radius: 10px; font-weight: bold; font-size: 1.5rem; }
 .content__form .validate { margin-top: 5px; font-size: 13px; }
 .content__form .validate.alert { color: var(--alert); }
 .content__form .validate.success { color: var(--success); }

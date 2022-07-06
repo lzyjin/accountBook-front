@@ -7,9 +7,9 @@
       <ModalState />
     </transition>
     <div class="contentsLayout">
-      <HeaderLayout/>
+      <HeaderLayout v-if="isShowHeader"/>
       <ContentsLayout/>
-      <FooterLayout/>
+      <FooterLayout v-if="isShowFooter"/>
     </div>
   </div>
 </template>
@@ -27,6 +27,15 @@ export default{
     HeaderLayout,
     ContentsLayout,
     FooterLayout
+  },
+  computed:{
+       isShowHeader(){
+         return  this.$HeaderControl.getHeader().isShow
+       },
+       isShowFooter(){
+            return this.$HeaderControl.getFooter().isShow
+       }
+
   }
 }
 </script>

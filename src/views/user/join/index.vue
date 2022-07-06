@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div >
     <div class="content__top">
       <h1 class="top__title">회원가입</h1>
     </div>
@@ -8,19 +8,17 @@
         <label>이름 입력</label>
         <div class="input-wrap">
           <input type="text" name="" v-model="userName" ref="userName">
-          <div v-if="this.userName !== ''" class="btn-input-reset" @click="fnNameReset">
-
-          </div>
+          <icon icon="fa-solid fa-times"  class="btn-input-reset" @click="fnNameReset"></icon>
         </div>
+           <p class="validation" v-show="true">아이디를 입력해주세요</p>
       </div>
-      <div>
+      <div style="margin-top: 2rem;">
         <label>이메일 입력</label>
         <div class="input-wrap">
           <input type="text" name="" v-model="id" ref="id">
-          <div v-if="this.id !== ''" class="btn-input-reset" @click="fnIdReset">
-            <i class="fas fa-times"></i>
-          </div>
+          <icon icon="fa-solid fa-times" class="btn-input-reset" @click="fnIdReset"></icon>
         </div>
+           <p class="validation" v-show="true">아이디를 입력해주세요</p>
       </div>
       <button class="button--join--sub" @click="fnJoin2">계속하기</button>
     </div>
@@ -61,25 +59,10 @@
         this.userName = '';
       },
       fnJoin2(){
-        if(this.userName === '' || this.userName === undefined){
-          alert("이름을 입력해주세요.");
-          this.$refs.userName.focus();
-          return;
-        }
-        if(this.id === '' || this.id === undefined){
-          alert("이메일을 입력해주세요.");
-          this.$refs.id.focus();
-          return;
-        }else{
-          if(!fnValidation(this.id)){
-            alert("이메일 형식이 올바르지않습니다.");
-            this.$refs.id.focus();
-          }else{
+
             //api통신 중복id확인
             //const response = await UserSvc.userIdCheck({userId:this.id});
-            this.$router.push({path:'/join2',name:'Params', params: {id:this.id, name:this.userName}});
-          }
-        }
+            this.$router.push({path:'/signUp/step2'});
       },
     },
     /*validations(){

@@ -2,14 +2,17 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-
+import {library } from '@fortawesome/fontawesome-svg-core'
+import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
+import { fas } from "@fortawesome/free-solid-svg-icons";
+import { far } from '@fortawesome/free-regular-svg-icons'
+import { fab} from '@fortawesome/free-brands-svg-icons'
 
 
 //css
 import '@/assets/css/reset.css'
 import '@/assets/css/main.scss'
 import '@/assets/css/style.css'
-
 //import prototype
 import ModalState from "@/common/service/common/ModalState";
 import SpinnerState from "@/common/service/common/SpinnerState";
@@ -42,6 +45,10 @@ Vue.use(dayjs)
 Vue.use(vuelidate)
 Vue.directive('observe', ObserveVisibility)
 Vue.use(_)
+library.add(fas)
+library.add(far)
+library.add(fab)
+Vue.component('icon', FontAwesomeIcon)
 Vue.config.productionTip = false
 new Vue({
   router,

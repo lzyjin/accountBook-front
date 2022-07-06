@@ -15,11 +15,18 @@ class HeaderControl{
     setIsHome(isHome=false){
         this.$store.dispatch('layout/setIsHome',{isHome})
     }
-    setHeader(title='', isLogo=false, isBack=false, isHome=false){
-        this.$store.dispatch('layout/setHeader',{title,isLogo,isBack,isHome})
+    setHeader(title='', isLogo=false, isBack=false, isHome=false, isShow=true){
+        this.$store.dispatch('layout/setHeader',{title,isLogo,isBack,isHome,isShow})
     }
     getHeader(){
         return this.$store.getters['layout/getHeader']
+    }
+    setFooter(isShow){
+        console.log("SET>>", isShow)
+        this.$store.dispatch('layout/setFooter', {isShow})
+    }
+    getFooter(){
+        return this.$store.getters['layout/getFooter']
     }
 
 }

@@ -190,3 +190,6 @@ body {
 .book-daily-item .item-content-money .money {  }
 .book-daily-item .item-content-money .money-income { color: var(--pink); font-weight: bold; }
 .book-daily-item .item-content-money .money-expense { color: var(--black); font-weight: bold; }
+
+/*devAdded*/
+.validation{ color: #ff87ca; font-size: 0.8rem; margin-top: 0.5rem; padding-left: 0.2rem;}
