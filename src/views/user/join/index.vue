@@ -10,15 +10,16 @@
           <input type="text" name="" v-model="userName" ref="userName">
           <icon icon="fa-solid fa-times"  class="btn-input-reset" @click="fnNameReset"></icon>
         </div>
-           <p class="validation" v-show="true">아이디를 입력해주세요</p>
+           <p class="validation" v-show="$v.userName.$error">이름을 올바르게 입력해주세요.</p>
       </div>
       <div style="margin-top: 2rem;">
         <label>이메일 입력</label>
         <div class="input-wrap">
-          <input type="text" name="" v-model="id" ref="id">
+          <input type="text" name="" v-model="id" ref="id" @input="" >
           <icon icon="fa-solid fa-times" class="btn-input-reset" @click="fnIdReset"></icon>
         </div>
-           <p class="validation" v-show="true">아이디를 입력해주세요</p>
+           <p class="validation" v-show="$v.id.$error||!meta.usable">{{validMsg()}}</p>
+           <p class="successValidation" v-show="meta.visible&&meta.usable">사용 가능한 아이디입니다.</p>
       </div>
       <button class="button--join--sub" @click="fnJoin2">계속하기</button>
     </div>
@@ -26,29 +27,27 @@
 </template>
 
 <script>
-  import UserSvc from "@/common/service/UserSvc";
-  //import {required} from "@vuelidate/validators";
-  //import {useVuelidate} from "@vuelidate/core";
+     import {required, email} from "vuelidate/src/validators";
 
-  function fnValidation(email){
-    let text = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
-    if(text.test(email)){
-      return true;
-    }else{
-      return false;
-    }
-  };
-
-  export default {
-    /*setup(){
-      return {
-        v$:useVuelidate()
-      }
-    },*/
+     export default {
     data(){
       return {
+           meta:{
+             usable:true,
+             visible:false
+
+           },
         id: '',
         userName: '',
+      }
+    },
+    validations:{
+      id:{
+           required:required,
+           email:email
+      },
+      userName:{
+           required:required,
       }
     },
     methods:{
@@ -58,21 +57,25 @@
       fnNameReset(){
         this.userName = '';
       },
-      fnJoin2(){
 
-            //api통신 중복id확인
-            //const response = await UserSvc.userIdCheck({userId:this.id});
+      validMsg(){
+           if(this.$v.id.$error){
+               return "이메일 형식으로 아이디를 올바르게 입력해주세요."
+           }
+           if(!this.meta.usable){
+                return "이미 사용 중인 아이디입니다."
+           }
+           return ""
+      },
+      fnJoin2(){
+           this.$v.$touch()
+           if(this.$v.$invalid&&(!this.meta.usable||!this.meta.visible)){
+                return
+           }
+            this.$store.dispatch("signup/setSignUpStep1", {id: this.id, userName: this.userName})
             this.$router.push({path:'/signUp/step2'});
       },
     },
-    /*validations(){
-      return{
-        id:{required},
-      }
-    },*/
-    mounted() {
-
-    }
   }
 </script>
 

@@ -64,9 +64,6 @@
           this.$router.push({path:'/signUp/step1'})
         }
      },
-     mounted() {
-
-     }
   }
 </script>
 

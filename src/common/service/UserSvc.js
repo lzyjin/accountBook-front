@@ -1,32 +1,30 @@
 import Service from "@/common/service/common/Service";
+
+const prefix = '/api/user'
 class UserSvc extends Service {
     signIn(param={}){
-        return this.get('/api/user/signIn', param).then(
+        return this.get(`${prefix}/signIn`, param).then(
             response => {
-                console.log(response)
-                /*if(response.data.code === 200){
+                if(response.data.code === 200){
                     const token = response.data.data.token;
                     const userData = response.data.data.userData
                 }
-                return response*/
+                return response.data
             }
         )
     }
     checkId(param={}){
-        return this.get('/api/user/checkId', param).then(
+        return this.get(`${prefix}/checkId`, param).then(
             response => {
-                if(response.data.code === 200){
-
-                }
-                return response
+                return response.data
             }
         )
     }
     signUp(param={}) {
-        return this.post('/api/user/signUp', param)
+        return this.post(`${prefix}/signUp`, param)
             .then(response => {
-                console.log("responseData : ",response);
-                return response;
+
+                return response.data;
             });
     }
 }

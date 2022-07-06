@@ -38,13 +38,13 @@ Vue.prototype.$UserSvc = UserSvc
 import dayjs from 'vue-dayjs'
 import vuelidate from 'vuelidate'
 import {ObserveVisibility} from 'vue-observe-visibility'
-import _ from 'lodash'
+import lodash from 'lodash'
 
 //Use
 Vue.use(dayjs)
 Vue.use(vuelidate)
 Vue.directive('observe', ObserveVisibility)
-Vue.use(_)
+Vue.prototype.$_ = lodash
 library.add(fas)
 library.add(far)
 library.add(fab)
