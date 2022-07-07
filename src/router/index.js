@@ -23,7 +23,7 @@ Vue.use(VueRouter)
  import SignUpStep1 from '@/views/user/join/index'
  import SignUpStep2 from '@/views/user/join2/index'
  import EasySign from "@/views/user/easySign";
- import Main from "@/views/user/main";
+ import Main from "@/views/main";
 import SpinnerState from "@/common/service/common/SpinnerState";
 
 const routes = [
@@ -35,27 +35,27 @@ const routes = [
   {
     path: '/signIn',
     component: SignIn,
-    meta:{title:"", isLogo:false, isBack: false, headerIsShow:false, footerIsShow:false}
+    meta:{title:"", isLogo:false, isBack: false, headerIsShow:false, footerIsShow:false, isButtonSet:false}
   },
   {
     path:'/signUp/step1',
     component:SignUpStep1,
-    meta:{title:"Step 1", isLogo:false, isBack: true, headerIsShow:true, footerIsShow:false}
+    meta:{title:"Step 1", isLogo:false, isBack: true, headerIsShow:true, footerIsShow:false, isButtonSet:false}
   },
   {
     path:"/signUp/step2",
     component: SignUpStep2,
-    meta:{title:"Step 2", isLogo:false, isBack: true, headerIsShow:true, footerIsShow:false}
+    meta:{title:"Step 2", isLogo:false, isBack: true, headerIsShow:true, footerIsShow:false, isButtonSet:false}
   },
   {
     path:"/easySign",
     component: EasySign,
-    meta:{title:"Step 2", isLogo:false, isBack: false, headerIsShow:false, footerIsShow:false}
+    meta:{title:"Step 2", isLogo:false, isBack: false, headerIsShow:false, footerIsShow:false, isButtonSet:false}
   },
   {
     path:"/main",
     component: Main,
-    meta:{title:"", isLogo:true, isBack: false, headerIsShow:true, footerIsShow:true}
+    meta:{title:"가계부", isLogo:true, isBack: false, headerIsShow:true, footerIsShow:true, isButtonSet:true}
   }
 ]
 
@@ -74,7 +74,7 @@ router.beforeEach((to, from, next) =>{
   spinner.activeSpinner(false)
   setTimeout(() => {spinner.deActiveSpinner()}, 500)
   const header = to.meta
-  headerControl.setHeader(header.title, header.isLogo, header.isBack, header.isHome, header.headerIsShow)
+  headerControl.setHeader(header.title, header.isLogo, header.isBack, header.isHome, header.headerIsShow, header.isButtonSet)
   headerControl.setFooter(header.footerIsShow)
   next()
 

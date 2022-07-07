@@ -31,7 +31,8 @@ export default({
             isLogo:false,
             isBack:false,
             isHome:false,
-            isShow:true
+            isButtonSet:false,
+            isShow:true,
         },
         footerLayout:{
             isShow:true
@@ -53,12 +54,13 @@ export default({
         setIsShowHeader(state, {_isShow }) {
             state.headerLayout.isShow=_isShow
         },
-        setHeader(state, {title, isLogo, isBack, isHome, isShow}){
+        setHeader(state, {title, isLogo, isBack, isHome, isShow, isButtonSet}){
             state.headerLayout.title = title
             state.headerLayout.isLogo = isLogo
             state.headerLayout.isBack = isBack
             state.headerLayout.isHome = isHome
             state.headerLayout.isShow = isShow
+            state.headerLayout.isButtonSet = isButtonSet
         },
         setFooter(state, {isShow}){
             state.footerLayout.isShow=isShow
@@ -173,9 +175,9 @@ export default({
         setIsShowHeader({commit}, {_isShow=true}){
             commit('setIsShowHeader',{_isShow})
         },
-        setHeader({commit}, {title, isLogo, isBack, isHome, isShow}){
+        setHeader({commit}, {title, isLogo, isBack, isHome, isShow, isButtonSet}){
 
-            commit('setHeader', {title:title, isLogo:isLogo,isBack:isBack,isHome:isHome, isShow:isShow})
+            commit('setHeader', {title:title, isLogo:isLogo,isBack:isBack,isHome:isHome, isShow:isShow, isButtonSet:isButtonSet})
         },
         setFooter({commit}, {isShow=true}){
             commit('setFooter', {isShow})

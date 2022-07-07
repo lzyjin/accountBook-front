@@ -31,14 +31,17 @@ Vue.prototype.$Constants = Constants
 
 //import Svc
 import UserSvc from '@/common/service/UserSvc'
+import DealLogSvc from '@/common/service/DealLogSvc'
 //Svc
 Vue.prototype.$UserSvc = UserSvc
+Vue.prototype.$DealLogSvc = DealLogSvc
 
 //Library
 import dayjs from 'vue-dayjs'
 import vuelidate from 'vuelidate'
 import {ObserveVisibility} from 'vue-observe-visibility'
 import lodash from 'lodash'
+
 
 //Use
 Vue.use(dayjs)

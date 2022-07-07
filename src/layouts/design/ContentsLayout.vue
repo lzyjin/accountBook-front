@@ -13,10 +13,10 @@ export default {
                  return "height: 100vh !important; margin-top:0px !important; padding:0rem!important"
             }
             if(!this.$HeaderControl.getHeader().isShow){
-                 return "height: calc(100vh - 100px) !important;"
+                 return "height: calc(100vh - 80px) !important;"
             }
             if(!this.$HeaderControl.getFooter().isShow){
-                 return "height: calc(100vh - 50px) !important;"
+                 return "height: calc(100vh - 80px) !important;"
             }
             return ""
        }
@@ -27,9 +27,9 @@ export default {
 <style scoped>
   .contentsLayout{
     width: 100vw;
-    margin-top: 50px;
+    margin-top: 80px;
     height: calc(100vh - 150px);
-    padding:1rem;
+    padding:0.2rem;
     overflow-y: auto;
   }
 </style>

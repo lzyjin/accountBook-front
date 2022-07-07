@@ -15,8 +15,8 @@ class HeaderControl{
     setIsHome(isHome=false){
         this.$store.dispatch('layout/setIsHome',{isHome})
     }
-    setHeader(title='', isLogo=false, isBack=false, isHome=false, isShow=true){
-        this.$store.dispatch('layout/setHeader',{title,isLogo,isBack,isHome,isShow})
+    setHeader(title='', isLogo=false, isBack=false, isHome=false, isShow=true, isButtonSet=false){
+        this.$store.dispatch('layout/setHeader',{title,isLogo,isBack,isHome,isShow, isButtonSet})
     }
     getHeader(){
         return this.$store.getters['layout/getHeader']

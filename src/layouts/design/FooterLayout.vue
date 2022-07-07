@@ -5,6 +5,7 @@
           :key="index"
           @click="fnRoute(item.url)"
           :style="`width:calc(100%/${footer.length})`"
+          :class="item.class"
       >
 <!--        <img :src="item.image" alt="">-->
         <icon :icon="item.image" :style="item.css"></icon>
@@ -40,8 +41,8 @@ export default {
   bottom: 0;
   left: 0;
   width: 100vw;
-  height: 100px;
-  padding:0.5rem;
+  height: 80px;
+  padding:0.8rem;
   z-index: 1;
   background-color: white;
   border-top: 2px solid rgba(238, 238, 238, 0.74);
