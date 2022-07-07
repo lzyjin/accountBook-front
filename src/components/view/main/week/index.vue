@@ -1,14 +1,16 @@
 <template>
      <main class="content">
-          <div class="book-weekly-list" v-for="(item,index) in data">
+       <h1>week</h1>
+          <div class="book-weekly-list" v-for="(item,index) in data" :key="index">
                <div class="book-weekly-item">
                     <div class="item-content item-content-week">
                          <p class="week week-number">{{`${index+1} 주차`}}</p>
-                         <h1 class="week week-period">5월 1일</h1>
+                         <h1 class="week week-period">{{}}</h1>
+                      {{item}}
                     </div>
                     <div class="item-content item-content-money">
-                         <p class="money money-income">+152,305,700원</p>
-                         <p class="money money-expense">-712,995원</p>
+<!--                         <p class="money money-income">{{incomes(item.income)}}</p>-->
+<!--                         <p class="money money-expense">{{ outcomes(item.outcome) }}</p>-->
                     </div>
                </div>
           </div>
@@ -22,7 +24,10 @@
 export default {
      name: 'week-index',
      description: '',
-     props:{
+    beforeMount() {
+      console.log("ASD",this.data)
+    },
+  props:{
           data:{
                type:[Array]
           }
@@ -30,11 +35,17 @@ export default {
      computed:{
      },
      methods:{
-          outcome(row){
-
+          outcomes(row){
+            if(row===null||row.length===0){
+              return '- 0'
+            }
+            return 'outcome'
           },
-          income(row){
-
+          incomes(row){
+            if(row===null||row.length===0){
+              return '+ 0'
+            }
+            return 'income'
           }
      }
 

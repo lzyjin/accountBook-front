@@ -23,7 +23,7 @@
       <div class="numberkey" ></div>
       <div class="numberkey" @click="enterNumber(0)">0</div>
       <div class="numberkey">
-        <icon icon="fa-solid fa-backspace"></icon>
+        <icon icon="fa-solid fa-backspace" @click="backSpace"></icon>
       </div>
     </div>
   </main>
@@ -44,12 +44,12 @@ export default {
     }
   },
   watch:{
-    subPassword(val){
+    async subPassword(val){
       if(val.length>=4&&this.mode==="sign"){
-        this.easySign()
+        await this.easySign()
       }
       if(val.length>=4&&this.mode==='second'){
-        this.makeEasyUp();
+        await this.makeEasyUp();
       }
       if(val.length>=4&&this.mode==='first'){
         this.subPasswordChk = val;
@@ -62,8 +62,16 @@ export default {
     }
   },
   methods:{
+    backSpace(){
+      if(this.subPassword.length>0){
+       this.subPassword = this.subPassword.slice(0, this.subPassword.length-1)
+      }
+    },
     enterNumber(number){
+      if(this.subPassword.length<=4){
         this.subPassword+=number.toString()
+      }
+
     },
     async makeEasyUp(){
       if(this.subPassword!==this.subPasswordChk){

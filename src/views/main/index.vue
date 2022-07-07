@@ -32,8 +32,8 @@
                          :class="meta.type===$Constants.CALENDAR.DAY.value?'active':''">일간</div>
                </div>
           </header>
-
-          <Week :data="data.calendar"/>
+          <Month :data="data.calendarMonth" v-if="meta.type === $Constants.CALENDAR.MONTH.value" :key="meta.key"/>
+          <Week :data="data.calendarWeek" v-if="meta.type === $Constants.CALENDAR.WEEK.value" :key="meta.key"/>
      </div>
 </template>
 
@@ -43,17 +43,31 @@ import Week from '@/components/view/main/week/index'
 export default {
   name: "main-index",
   components:{Month, Week},
-  beforeMount() {
-       this.getList()
+  async beforeMount() {
+    let param = {type:this.$Constants.CALENDAR.MONTH.value, regDate:this.regDate}
+    let response = await this.$DealLogSvc.getList(param)
+    this.data.calendarMonth = response.data.calendar
+     param = {type:this.$Constants.CALENDAR.WEEK.value, regDate:this.regDate}
+     response = await this.$DealLogSvc.getList(param)
+    this.data.calendarWeek = response.data.calendar
+     param = {type:this.$Constants.CALENDAR.DAY.value, regDate:this.regDate}
+     response = await this.$DealLogSvc.getList(param)
+      this.data.calendarDay = response.data.calendar
+
+    this.data.totalIncome = response.data.totalIncome
+    this.data.totalOutcome = response.data.totalOutcome
   },
   data(){
        return {
           meta:{
                type:this.$Constants.CALENDAR.MONTH.value,
                date:"2022-07-01",
+               key:1
           },
           data:{
-               calendar:[],
+               calendarMonth:[],
+               calendarWeek:[{day:"", outcome:[], income:[]}],
+               calendarDay:[],
                totalIncome:'',
                totalOutcome:''
           }
@@ -73,8 +87,8 @@ export default {
   },
   methods:{
        changeTab(idx){
-            this.meta.type=idx;
-            this.getList()
+        this.meta.type=idx;
+        // this.getList()
        },
        moveDate(direction){
             const date = new Date(this.meta.date)
@@ -97,8 +111,21 @@ export default {
        async getList(){
             const param = {type:this.meta.type, regDate:this.regDate}
             const response = await this.$DealLogSvc.getList(param)
-            console.log("RESPONSE :: ", response.data)
-            this.data.calendar = response.data.calendar
+
+         if(this.meta.type===this.$Constants.CALENDAR.MONTH.value){
+           this.data.calendarMonth = response.data.calendar
+           this.meta.key+=1
+         }
+         if(this.meta.type===this.$Constants.CALENDAR.WEEK.value){
+           this.data.calendarWeek = response.data.calendar
+           this.meta.key+=1
+         }
+         if(this.meta.type===this.$Constants.CALENDAR.DAY.value){
+           this.data.calendarDay = response.data.calendar
+           this.meta.key+=1
+
+         }
+
             this.data.totalIncome = response.data.totalIncome
             this.data.totalOutcome = response.data.totalOutcome
        }
