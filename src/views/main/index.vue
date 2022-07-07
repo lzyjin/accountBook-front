@@ -32,30 +32,26 @@
                          :class="meta.type===$Constants.CALENDAR.DAY.value?'active':''">일간</div>
                </div>
           </header>
-          <Month :data="data.calendarMonth" v-if="meta.type === $Constants.CALENDAR.MONTH.value" :key="meta.key"/>
-          <Week :data="data.calendarWeek" v-if="meta.type === $Constants.CALENDAR.WEEK.value" :key="meta.key"/>
+          <Month :data="data.calendarMonth" v-if="meta.type === $Constants.CALENDAR.MONTH.value" :key="meta.key" />
+          <Week :data="data.calendarWeek" v-if="meta.type === $Constants.CALENDAR.WEEK.value" :key="meta.key" />
+          <Day :data="data.calendarDay" :date="meta.date" v-if="meta.type === $Constants.CALENDAR.DAY.value" :key="meta.key" />
+
+
+       <div class="button--add-list">
+         <icon icon="fa-solid fa-plus"></icon>
+       </div>
      </div>
 </template>
 
 <script>
 import Month from '@/components/view/main/month/index'
 import Week from '@/components/view/main/week/index'
+import Day from "@/components/view/main/day";
 export default {
   name: "main-index",
-  components:{Month, Week},
+  components:{Month, Week,Day},
   async beforeMount() {
-    let param = {type:this.$Constants.CALENDAR.MONTH.value, regDate:this.regDate}
-    let response = await this.$DealLogSvc.getList(param)
-    this.data.calendarMonth = response.data.calendar
-     param = {type:this.$Constants.CALENDAR.WEEK.value, regDate:this.regDate}
-     response = await this.$DealLogSvc.getList(param)
-    this.data.calendarWeek = response.data.calendar
-     param = {type:this.$Constants.CALENDAR.DAY.value, regDate:this.regDate}
-     response = await this.$DealLogSvc.getList(param)
-      this.data.calendarDay = response.data.calendar
-
-    this.data.totalIncome = response.data.totalIncome
-    this.data.totalOutcome = response.data.totalOutcome
+    this.getList()
   },
   data(){
        return {
@@ -88,7 +84,7 @@ export default {
   methods:{
        changeTab(idx){
         this.meta.type=idx;
-        // this.getList()
+        this.getList()
        },
        moveDate(direction){
             const date = new Date(this.meta.date)

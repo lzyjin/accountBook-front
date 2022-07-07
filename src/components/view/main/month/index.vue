@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>month</h1>
-    {{data}}
+    {{data[1][5].outcome}}
   </div>
 </template>
 

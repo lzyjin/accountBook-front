@@ -199,7 +199,7 @@ body {
 .book-daily-item .item-content-memo .category-wrap {}
 .book-daily-item .item-content-memo .category { font-size: 13px; color: var(--gray); }
 .book-daily-item .item-content-memo .category-main { position: relative; }
-.book-daily-item .item-content-memo .category-main::after { content: '>'; margin-left: 5px; }
+.book-daily-item .item-content-memo .category-main::after { content: ' '; margin-left: 5px; }
 .book-daily-item .item-content-memo .category-sub {}
 .book-daily-item .item-content-money {
     margin-left: auto; }
