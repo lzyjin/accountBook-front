@@ -20,7 +20,6 @@ import ModalList from "@/common/service/common/ModalList";
 import Constants from "@/common/constants/ConstantCode";
 import HeaderControl from "@/common/service/common/HeaderControl";
 import FooterControl from "@/common/service/common/FooterControl"
-
 //prototype
 Vue.prototype.$ModalState = new ModalState(store)
 Vue.prototype.$SpinnerState = new SpinnerState(store)
@@ -32,9 +31,11 @@ Vue.prototype.$Constants = Constants
 //import Svc
 import UserSvc from '@/common/service/UserSvc'
 import DealLogSvc from '@/common/service/DealLogSvc'
+import CategorySvc from "@/common/service/CategorySvc";
 //Svc
 Vue.prototype.$UserSvc = UserSvc
 Vue.prototype.$DealLogSvc = DealLogSvc
+Vue.prototype.$CategorySvc = CategorySvc
 
 //Library
 import dayjs from 'vue-dayjs'

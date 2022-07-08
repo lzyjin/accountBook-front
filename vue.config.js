@@ -12,13 +12,14 @@ module.exports = {
         proxy:{
             '/api':{
                 // target:'http://newkayak.iptime.org:50004/',
-                target:'http://192.168.0.9:8080/',
+                target:'http://localhost:8080/',
+                // target:'http://192.168.0.9:8080/',
                 changeOrigin:true
             },
             '/admin':{
                 // target:'http://newkayak.iptime.org:50004/',
-                // target:'http://localhost:8080/',
-                target:'http://192.168.0.9:8080/',
+                target:'http://localhost:8080/',
+                // target:'http://192.168.0.9:8080/',
                 changeOrigin:true
             }
         }

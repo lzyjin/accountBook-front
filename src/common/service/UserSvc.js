@@ -2,17 +2,6 @@ import Service from "@/common/service/common/Service";
 
 const prefix = '/api/user'
 class UserSvc extends Service {
-    signIn(param={}){
-        return this.get(`${prefix}/signIn`, param).then(
-            response => {
-                if(response.data.code === 200){
-                    const userData = response.data.data.userData
-                    this.setToken(response.headers['authorization'], response.headers['rf'], userData)
-                }
-                return response.data
-            }
-        )
-    }
     checkId(param={}){
         return this.get(`${prefix}/check`, param).then(
             response => {
@@ -31,6 +20,24 @@ class UserSvc extends Service {
                 return response.data;
             });
     }
+    signIn(param={}){
+        return this.get(`${prefix}/signIn`, param).then(
+            response => {
+                if(response.data.code === 200){
+                    const userData = response.data.data.userData
+                    this.setToken(response.headers['authorization'], response.headers['rf'], userData)
+                }
+                return response.data
+            }
+        )
+    }
+   signOut(){
+        return this.get(`${prefix}/signOut`)
+            .then(response=>{
+                return response.data
+            })
+   }
+
     easySignUp(param={}){
         return this.patch(`${prefix}/easySignUp`,param)
             .then(response=>{
@@ -39,6 +46,12 @@ class UserSvc extends Service {
     }
     easySignIn(param={}){
         return this.get(`${prefix}/easySignIn`, param)
+            .then(response=>{
+                return response.data
+            })
+    }
+    changePassword(param={}){
+        return this.patch(`${prefix}/changePw`, param)
             .then(response=>{
                 return response.data
             })

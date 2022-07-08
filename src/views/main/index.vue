@@ -51,7 +51,8 @@ export default {
   name: "main-index",
   components:{Month, Week,Day},
   async beforeMount() {
-    this.getList()
+       this.meta.date = (this.$dayjs(new Date()).format("YYYY-MM-DD"))
+     this.getList()
   },
   data(){
        return {
@@ -110,15 +111,12 @@ export default {
 
          if(this.meta.type===this.$Constants.CALENDAR.MONTH.value){
            this.data.calendarMonth = response.data.calendar
-           this.meta.key+=1
          }
          if(this.meta.type===this.$Constants.CALENDAR.WEEK.value){
            this.data.calendarWeek = response.data.calendar
-           this.meta.key+=1
          }
          if(this.meta.type===this.$Constants.CALENDAR.DAY.value){
            this.data.calendarDay = response.data.calendar
-           this.meta.key+=1
 
          }
 

@@ -11,7 +11,7 @@ const footer =[
   image:"fa-solid fa-chart-pie ",
   class:"footer__item footer__item--chart",
   css:"font-weight: 600; font-size:32px; margin-bottom:1rem;",
-  url:'/chart'
+  url:'/statistics'
  },
  {
   title:'일반',

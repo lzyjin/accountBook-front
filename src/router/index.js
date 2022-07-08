@@ -24,6 +24,7 @@ Vue.use(VueRouter)
  import SignUpStep2 from '@/views/user/join2/index'
  import EasySign from "@/views/user/easySign";
  import Main from "@/views/main";
+ import Statistics from '@/views/statistics/index'
 import SpinnerState from "@/common/service/common/SpinnerState";
 
 const routes = [
@@ -56,6 +57,11 @@ const routes = [
     path:"/main",
     component: Main,
     meta:{title:"가계부", isLogo:true, isBack: false, headerIsShow:true, footerIsShow:true, isButtonSet:true}
+  },
+  {
+    path:"/statistics",
+    component: Statistics,
+    meta:{title:"통계", isLogo:true, isBack: false, headerIsShow:true, footerIsShow:true, isButtonSet:true}
   }
 ]
 
