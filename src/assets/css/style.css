@@ -152,7 +152,6 @@ body {
 #modalFilter .modal .modal__content .button-save { height: 60px; }
 
 
-체
 /* 간편로그인 */
 .numberpad { position: absolute; left: 0; bottom: 0; width: 100%; height: 50vh; background: var(--pink); display: grid; grid-template-columns: repeat(3, 1fr); }
 .numberpad .numberkey { cursor: pointer; display: flex; justify-content: center; align-items: center; color: #fff;

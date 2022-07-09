@@ -56,12 +56,12 @@ const routes = [
   {
     path:"/main",
     component: Main,
-    meta:{title:"가계부", isLogo:true, isBack: false, headerIsShow:true, footerIsShow:true, isButtonSet:true}
+    meta:{title:"가계부", isLogo:true, isBack: false, headerIsShow:true, footerIsShow:true, isButtonSet:false}
   },
   {
     path:"/statistics",
     component: Statistics,
-    meta:{title:"통계", isLogo:true, isBack: false, headerIsShow:true, footerIsShow:true, isButtonSet:true}
+    meta:{title:"통계", isLogo:true, isBack: false, headerIsShow:true, footerIsShow:true, isButtonSet:false}
   }
 ]
 

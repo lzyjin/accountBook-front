@@ -21,7 +21,6 @@ export default({
             modalContent:{
                 data:{},//들어갈 데이터
                 alertCallBack:()=>{},
-
                 confirmPositiveCallBack:()=>{},
                 confirmNegativeCallBack:()=>{}
             },
@@ -36,7 +35,7 @@ export default({
         },
         footerLayout:{
             isShow:true
-        }
+        },
     },
     mutations:{
         setTitle(state,{_title}){
